@@ -5,7 +5,6 @@ class ProductsController < AuthenticatedController
   def count
     product_count = ShopifyAPI::Product.count.body
     ShopifyAPI::Logger.info("Retrieved product count: #{product_count["count"]}")
-    # logger.info("Retrieved productcount: #{error}")
     render(json: product_count)
   end
 
